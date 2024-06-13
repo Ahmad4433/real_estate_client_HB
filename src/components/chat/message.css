@@ -61,7 +61,10 @@
   border-top: 1px solid #444444;
   flex-direction: column;
 }
-
+.messages_container {
+  max-height: 440px;
+  overflow-y: auto;
+}
 .user_status {
   font-size: 12px;
   color: #ccc;

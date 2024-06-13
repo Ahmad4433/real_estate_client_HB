@@ -8,10 +8,11 @@ import { messageActions } from "../../store/message-slice";
 const Message = () => {
   const [online, setOnline] = useState(null);
   const socket = useSelector((state) => state.socket.socket);
-  const [message, setMessage] = useState("");
   const user = useSelector((state) => state.chat.selectedUser);
   const sender = useSelector((state) => state.chat.sender);
-  const conversion = useSelector((state) => state.message.conversion);
+  const [message, setMessage] = useState("");
+
+  const [chat, setChat] = useState([]);
   const dispatch = useDispatch();
   const removeUserHandler = () => {
     dispatch(chatActions.setSelected(null));
@@ -30,7 +31,7 @@ const Message = () => {
         message: message,
       });
     }
-
+    setChat((pevChat) => [...pevChat, message]);
     setMessage("");
   };
 
@@ -38,12 +39,19 @@ const Message = () => {
     socket.on("online", (status) => {
       setOnline(status);
     });
+
+    socket.on("live", (live) => {
+      setChat((prevChate) => [...prevChate, live]);
+    });
+    socket.on("confirm", (msg) => {
+      setChat((prevChate) => [...prevChate, msg]);
+    });
   }, []);
 
   useEffect(() => {
     socket.on("conversion", (chat) => {
       if (chat) {
-        dispatch(messageActions.setConversion(chat[0]?.message));
+        setChat(chat[0]?.message);
       }
     });
   }, [user]);
@@ -54,24 +62,26 @@ const Message = () => {
         <IoArrowBack onClick={removeUserHandler} className="chat_back_icon" />
         <div className="user_status_bar">
           <span className="user_status_name">{user?.name}</span>
-          <span className="user_status">{online ? "Onlie" : "Offline"}</span>
+          <span className="user_status">{online ? "Online" : "Offline"}</span>
         </div>
       </div>
       <div className="messages">
-        {conversion?.length > 0 ? (
-          conversion.map((item, index) => {
-            return (
-              <span
-                className={item?.sender === sender ? "sender" : "receiver"}
-                key={index}
-              >
-                {item?.message}
-              </span>
-            );
-          })
-        ) : (
-          <div></div>
-        )}
+        <div className="messages_container">
+          {chat?.length > 0 ? (
+            chat.map((item, index) => {
+              return (
+                <span
+                  className={item?.senderId === sender ? "sender" : "receiver"}
+                  key={index}
+                >
+                  {item?.message}
+                </span>
+              );
+            })
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
 
       <div className="message_controll">
