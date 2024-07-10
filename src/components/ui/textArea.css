@@ -1,0 +1,16 @@
+.ui_text_area {
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.4rem;
+  max-width: 100%;
+  overflow: hidden;
+  min-width: 100%;
+}
+
+.ui_text_area:focus {
+  border: 1px solid var(--clrsecondary);
+}

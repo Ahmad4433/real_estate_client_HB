@@ -1,0 +1,43 @@
+.single_review_main {
+  padding: 0 1.4rem;
+}
+
+.single_review_container {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  border-radius: 6px;
+}
+
+.review_icon {
+  color: var(--clrprimary);
+  font-size: 2rem;
+}
+
+.review_client {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review_client_img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+.review_message {
+  font-size: 14px;
+  color: var(--clrsecondary);
+  line-height: 1.6;
+}
+
+.review_client_name {
+  color: var(--clrprimary);
+  font-weight: 600;
+}

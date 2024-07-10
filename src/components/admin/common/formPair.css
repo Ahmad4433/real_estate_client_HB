@@ -1,0 +1,6 @@
+.ui_form_pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}

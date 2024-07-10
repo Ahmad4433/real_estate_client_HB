@@ -1,0 +1,44 @@
+.listing_section {
+  background-color: #f9f9f9;
+}
+.listing_main {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.listing_section_main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.listing_page_title {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 1.6rem;
+  color: var(--clrsecondary);
+  padding: 1rem 0.4rem;
+}
+
+.listing_more_section {
+  text-decoration: none;
+
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.listing_more_section:hover {
+  color: var(--clrprimary);
+}
+
+.listing_more_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 756px) and (min-width: 1600px) {
+  .listing_section_main {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

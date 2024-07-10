@@ -1,0 +1,15 @@
+.admin_layout_sidebar {
+  position: fixed;
+  width: 330px;
+  background-color: #1d293e;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+.admin_layout_container {
+  width: calc(100% - 330px);
+  float: right;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  padding: 2rem;
+}

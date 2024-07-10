@@ -1,0 +1,31 @@
+.single_menu_main {
+  display: flex;
+  padding: 0.8rem;
+  gap: 0.4rem;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.single_menu_main:hover {
+  background-color: #172133;
+  border-color: var(--clrprimary);
+}
+
+.single_menu_main:hover span {
+  color: white;
+  transition: all 0.3s;
+}
+.single_menu_main span {
+  color: #8392af;
+  letter-spacing: 0.6px;
+}
+.single_menu_main span:first-child {
+  font-size: 22px;
+}
+
+.single_menu_main span:last-child {
+  font-size: 16px;
+  font-weight: 600;
+}

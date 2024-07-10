@@ -1,0 +1,19 @@
+.admin_add_listing_main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin_add_listing_form_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+.admin_add_listing_bar {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.admin_add_listing_save_action {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,10 @@
+.review_slider_main {
+  background-color: #f5f5f5;
+  padding: var(--pagepading);
+}
+
+.review_slider_container {
+  max-width: 60%;
+  margin: 2rem auto;
+  overflow-x: hidden;
+}

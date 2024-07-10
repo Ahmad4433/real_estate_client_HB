@@ -1,0 +1,62 @@
+.property_description_main {
+  background-color: white;
+  padding:  2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.6rem;
+}
+
+.propert_description_main_features {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+.propert_description_main_features span {
+  display: block;
+  width: 120px;
+  text-align: center;
+  padding: 0.6rem 0;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.propert_description_main_features span:hover {
+  color: var(--clrprimary);
+}
+
+.property_deacription_decription {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.propert_description_title {
+  color: var(--clrsecondary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.propert_description_detail,
+.propert_description_detail_exp {
+  color: var(--gray500);
+  font-size: 14px;
+  line-height: 2;
+  --webkit-line-clamp: 4;
+  --webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.propert_description_detail_exp {
+  overflow: auto;
+  display: block;
+}
+
+.peopert_description_detail_action {
+  color: var(--clrprimary);
+  cursor: pointer;
+  margin-top: -0.6rem;
+  width: fit-content;
+}

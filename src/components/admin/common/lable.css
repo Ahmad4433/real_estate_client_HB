@@ -1,0 +1,5 @@
+.ui_lable {
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--clrsecondary);
+}

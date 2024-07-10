@@ -1,0 +1,10 @@
+.home_agents_main {
+  width: 80%;
+  margin: 2rem auto;
+  padding: var(--pagepading);
+}
+
+.home_agent_slider {
+  overflow-x: hidden;
+  width: 100%;
+}

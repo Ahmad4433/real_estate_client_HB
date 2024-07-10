@@ -1,0 +1,134 @@
+.single_prop_main {
+  padding: 0.6rem;
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  background-color: white;
+}
+.single_prop_main:hover {
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s;
+}
+
+.single_prop_img_container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.single_prop_container_bd {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.243);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.single_prop_main:hover .single_prop_img {
+  transform: scale(1.1);
+  transition: all 2s;
+}
+.single_prop_img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 2s;
+}
+
+.single_prop_type_tag,
+.single_prop_type_tag_2 {
+  display: block;
+  padding: 0.2rem 1.4rem;
+  border-radius: 4px;
+  background-color: var(--clrprimary);
+  color: white;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.single_prop_type_tag_2 {
+  background-color:seagreen;
+  color: white;
+}
+
+.single_prop_price {
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.single_prop_price_duration {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.single_prop_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.single_prop_type {
+  color: var(--clrprimary);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.single_prop_title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--clrsecondary);
+}
+
+.single_prop_location_container {
+  display: flex;
+  align-items: center;
+  color: var(--gray500);
+}
+
+.single_prop_ginle_anamty {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  color: var(--gray500);
+}
+
+.h_bar {
+  width: 100%;
+  background-color: #ccc;
+  height: 1px;
+}
+
+.single_prop_agent {
+  padding: 1rem 0;
+}
+
+.single_prop_agent_profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.single_prop_name {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--gray500);
+}
+
+.single_prop_avatar {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}

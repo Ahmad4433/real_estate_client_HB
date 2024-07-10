@@ -1,0 +1,77 @@
+.property_detail_agent_main {
+  padding: 1rem;
+}
+
+.property_detail_agent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.property_detail_image_container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+.property_detail_agent_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.property_detail_agent_name {
+  font-weight: 700;
+  color: var(--clrprimary);
+  padding-left: 0.2rem;
+}
+
+.property_detail_agent_deal_count {
+  color: var(--clrsecondary);
+  font-size: 14px;
+  padding-left: 0.2rem;
+  display: block;
+}
+.property_detail_agent_heading,
+.property_detail_agent_contact_title_title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: block;
+  padding: 1rem 0;
+  color: var(--clrsecondary);
+}
+
+.property_detail_agent_container {
+  border-top: 1px solid #f4f4f4;
+  margin-top: 1rem;
+  padding: 2rem 0;
+}
+
+.property_detail_agent_contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1rem 4rem;
+}
+
+.property_detail_agent_contact a {
+  display: flex;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--clrprimary);
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.property_detail_agent_contact a:nth-child(2) {
+  background-color: seagreen;
+}
+.property_detail_agent_contact a:nth-child(3) {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: var(--clrsecondary);
+}

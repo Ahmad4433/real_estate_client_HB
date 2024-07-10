@@ -1,0 +1,35 @@
+.footer_main {
+  background-color: #232733;
+  padding: 2rem 8rem;
+}
+
+.footer_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
+}
+
+.footrer_col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer_link_title {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.footer_message,
+.footer_link {
+  color: #98a2aa;
+  font-size: 14px;
+  transition: all 0.6s;
+  text-decoration: none;
+}
+
+.footer_link:hover {
+  transform: translateX(10px);
+  transition: all 0.6s;
+}

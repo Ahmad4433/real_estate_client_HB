@@ -1,0 +1,13 @@
+.ui_input {
+  outline: none;
+  border: none;
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 6px;
+  width: 100%;
+}
+.ui_input:focus {
+  border: 1px solid var(--clrsecondary);
+}

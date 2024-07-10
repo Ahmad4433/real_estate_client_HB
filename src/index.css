@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+
 
 * {
   margin: 0;
@@ -6,6 +9,49 @@
   box-sizing: border-box;
 }
 
+:root {
+  --clrprimary: #ff5a5f;
+  --clrhover: #f9444a;
+  --clrsecondary: #484848;
+  --gray500: #777;
+  --gray400: #98a2aa;
+  --transperant: rgba(255, 255, 255, 0.202);
+  --fontmain: "Nunito";
+  --agentoverlay: #080f1dcc;
+  --pagepading: 4rem 0;
+}
+
 body {
-  font-family: "Poppins";
+  font-family: "Nunito";
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a,
+textarea,
+input,
+button,
+option,
+select {
+  font-family: inherit;
+}
+
+.page_title_center,
+.page_detail_center {
+  text-align: center;
+  width: 100%;
+}
+.page_title_center {
+  font-weight: 700;
+  color: var(--clrsecondary);
+  letter-spacing: 0.6px;
+  font-size: 2rem;
+}
+
+.page_detail_center {
+  color: var(--gray500);
+  margin-bottom: 2rem;
 }

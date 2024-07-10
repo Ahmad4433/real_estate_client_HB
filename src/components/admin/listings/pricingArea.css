@@ -1,0 +1,12 @@
+.pricing_area_area {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+.pricing_area_item:first-child {
+  flex: 1;
+}
+.pricing_area_item:last-child {
+  width: 200px;
+}

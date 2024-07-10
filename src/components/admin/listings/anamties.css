@@ -1,0 +1,9 @@
+.amanty_feature_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.4rem;
+}
+.amanty_feature_container div {
+  width: 100%;
+}

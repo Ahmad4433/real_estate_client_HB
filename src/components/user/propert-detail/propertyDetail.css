@@ -1,0 +1,24 @@
+.property_detail_main,
+.property_detail_content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 66px 0;
+}
+
+.property_detail_content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.6rem;
+
+}
+
+.property_detail_parent {
+  background-color: #f5f5f5;
+  /* padding: 4rem 0; */
+}
+
+.property_detail_agent_detail {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
