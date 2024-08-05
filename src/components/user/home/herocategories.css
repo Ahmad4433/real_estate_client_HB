@@ -25,9 +25,29 @@
 
 .hero_category_item span {
   font-weight: 600;
-
 }
-.hero_category_item:hover{
-    background-color:rgba(255, 255, 255, 0.123) ;
-    transition: background-color 0.2s;
+.hero_category_item:hover {
+  background-color: rgba(255, 255, 255, 0.123);
+  transition: background-color 0.2s;
+}
+
+@media (max-width: 756px) {
+  .hero_category_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero_category_item {
+    height: 80px;
+    width: 100%;
+    padding: 0.2rem;
+  }
+  .hero_cate_icon {
+    font-size: 2.6rem;
+  }
+  .hero_category_item span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }

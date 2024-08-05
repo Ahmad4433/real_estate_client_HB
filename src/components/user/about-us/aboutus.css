@@ -80,3 +80,32 @@
 .about_us_content_4 {
   margin: 4rem auto;
 }
+
+@media (max-width: 756px) {
+  .about_us_bg {
+    height: 20vh;
+  }
+  .about_us_bg_title {
+    font-size: 2rem;
+  }
+
+  .about_us_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 0;
+    padding: 2rem 1rem;
+  }
+  .about_us_content div:first-child {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+  .about_us_content div:last-child {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+}

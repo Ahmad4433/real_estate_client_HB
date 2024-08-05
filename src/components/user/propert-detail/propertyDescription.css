@@ -1,24 +1,25 @@
 .property_description_main {
   background-color: white;
-  padding:  2rem;
+  padding: 2rem;
   border-radius: 12px;
   border: 1px solid #ccc;
   margin-bottom: 1.6rem;
 }
 
 .propert_description_main_features {
-  display: flex;
-  gap: 2rem;
-  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-bottom: 1rem;
+  gap: 1rem;
 }
 .propert_description_main_features span {
   display: block;
-  width: 120px;
   text-align: center;
   padding: 0.6rem 0;
-  background-color: #f5f5f5;
+background-color: #f5f5f5;
   border-radius: 6px;
   cursor: pointer;
+
 }
 
 .propert_description_main_features span:hover {
@@ -37,21 +38,9 @@
   font-size: 1.1rem;
 }
 
-.propert_description_detail,
-.propert_description_detail_exp {
+.propert_description_detail {
   color: var(--gray500);
   font-size: 14px;
-  line-height: 2;
-  --webkit-line-clamp: 4;
-  --webkit-box-orient: vertical;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.propert_description_detail_exp {
-  overflow: auto;
-  display: block;
 }
 
 .peopert_description_detail_action {
@@ -59,4 +48,21 @@
   cursor: pointer;
   margin-top: -0.6rem;
   width: fit-content;
+}
+
+.property_deacription_decription {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+
+@media(max-width:756px){
+  .propert_description_main_features span{
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .property_description_main{
+    margin-top: 1rem;
+  }
 }

@@ -1,39 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 const listingSlice = createSlice({
   name: "listing",
   initialState: {
-    title: "",
-    detail: "",
-    price: "",
-    area: "",
-    unit: "",
-    features: [],
-    nearBy: [],
-    branch: "",
-    purpose: "",
-    type: "",
-    images: [],
-    video: "",
-    user: "",
+    updateDoc: {},
+    updateUser: {},
   },
   reducers: {
-    setTitle(state,action){
-        state.title = action.payload
+    setUpdateDoc(state, action) {
+      state.updateDoc = action.payload;
     },
-    setDetail(state,action){
-        state.detail = action.payload
+    setUpdateUser(state, action) {
+      state.updateUser = action.payload;
     },
-    setPrice(state){
-        state.price = action.payload
-    },
-    setArea(state,action){
-        state.area = action.payload
-    },
-    setUnit(state,action){
-        state.unit = action.payload
-    }
   },
 });
 
-export const listingActions = listingSlice.actions;
+export const listingSliceAction = listingSlice.actions;
 export default listingSlice;

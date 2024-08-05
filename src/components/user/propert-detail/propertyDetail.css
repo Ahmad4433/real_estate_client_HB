@@ -9,7 +9,6 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.6rem;
-
 }
 
 .property_detail_parent {
@@ -21,4 +20,44 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 10px;
+}
+
+.property_price_desktop_detail_hide {
+  display: none;
+}
+
+@media (max-width: 756px) {
+  .property_detail_main {
+    padding: 1rem 0;
+  }
+  .property_price_mobile_detail_hide {
+    display: none;
+  }
+  .property_price_desktop_detail_hide {
+    display: block;
+  }
+
+  .property_detail_content {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+  }
+
+  .detail_flex_vertical {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .property_detail_parent {
+    padding: 1rem 1rem;
+    /* display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%; */
+  }
+
+
 }

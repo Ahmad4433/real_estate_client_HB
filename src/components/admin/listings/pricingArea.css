@@ -10,3 +10,13 @@
 .pricing_area_item:last-child {
   width: 200px;
 }
+
+.listing_add_beds_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.4rem;
+}
+.listing_add_beds_container div {
+  width: 100%;
+}

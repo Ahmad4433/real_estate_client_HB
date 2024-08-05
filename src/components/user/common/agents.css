@@ -2,9 +2,17 @@
   width: 80%;
   margin: 2rem auto;
   padding: var(--pagepading);
+  overflow-x: hidden;
 }
 
 .home_agent_slider {
   overflow-x: hidden;
   width: 100%;
+}
+
+@media (max-width: 756px) {
+  .home_agents_main {
+    width: 100%;
+    padding: 0;
+  }
 }

@@ -39,21 +39,25 @@ const Footer = () => {
           <div className="footer_follow_links"></div>
           <Link className="footer_link">
             <FaFacebook />
+            <span>Facebook</span>
           </Link>
           <Link className="footer_link">
             <FaInstagram />
+            <span>Instagram</span>
           </Link>
           <Link className="footer_link">
             {" "}
             <FaTwitter />
+            <span>Twitter</span>
           </Link>
           <Link className="footer_link">
             {" "}
             <FaYoutube />
+            <span>Youtube</span>
           </Link>
           <Link className="footer_link">
-            {" "}
             <FaTiktok />
+            <span>Tiktok</span>
           </Link>
         </div>
       </div>

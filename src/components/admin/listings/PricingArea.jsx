@@ -7,7 +7,17 @@ import SectionTitle from "../common/SectionTitle";
 import Select from "../../ui/Select";
 import FormPair from "../common/FormPair";
 import MultiPair from "../common/MultiPair";
-const PricingArea = ({ onPriceChange, onAreaChange, onUnitChange }) => {
+const PricingArea = ({
+  onPriceChange,
+  onAreaChange,
+  onUnitChange,
+  price,
+  area,
+  beds,
+  onBedChange,
+  baths,
+  onBathChange,
+}) => {
   const areasUnitOptions = [
     { title: "Marla" },
     { title: "Sq.Ft" },
@@ -24,8 +34,10 @@ const PricingArea = ({ onPriceChange, onAreaChange, onUnitChange }) => {
               <FormPair>
                 <Lable>Price</Lable>
                 <Input
+                  name="price"
+                  value={price}
                   onChange={onPriceChange}
-                  type="text"
+                  type="number"
                   placeholder="Enter Price"
                 />
               </FormPair>
@@ -35,8 +47,10 @@ const PricingArea = ({ onPriceChange, onAreaChange, onUnitChange }) => {
                 <FormPair>
                   <Lable>Area Size</Lable>
                   <Input
+                    type="number"
+                    name="area"
+                    value={area}
                     onChange={onAreaChange}
-                    type="text"
                     placeholder="Enter Size"
                   />
                 </FormPair>
@@ -45,6 +59,30 @@ const PricingArea = ({ onPriceChange, onAreaChange, onUnitChange }) => {
                 <FormPair>
                   <Lable>Unit</Lable>
                   <Select onChange={onUnitChange} options={areasUnitOptions} />
+                </FormPair>
+              </div>
+            </div>
+            <div className="listing_add_beds_container">
+              <div>
+                <FormPair>
+                  <Lable>Beds</Lable>
+                  <Input
+                    name="beds"
+                    value={beds}
+                    onChange={onBedChange}
+                    type="number"
+                  />
+                </FormPair>
+              </div>
+              <div>
+                <FormPair>
+                  <Lable>Baths</Lable>
+                  <Input
+                    name="baths"
+                    onChange={onBathChange}
+                    value={baths}
+                    type="number"
+                  />
                 </FormPair>
               </div>
             </div>

@@ -3,6 +3,8 @@
   justify-content: space-between;
   width: 100%;
   gap: 1.4rem;
+  max-height: 400px;
+  overflow-y: auto;
 }
 .amanty_feature_container div {
   width: 100%;

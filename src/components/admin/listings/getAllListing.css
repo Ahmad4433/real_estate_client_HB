@@ -1,0 +1,13 @@
+.table_admin_listings {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.tabel_admin_listings_header th {
+  padding: 1rem;
+  font-size: 14px;
+  text-transform: capitalize;
+  text-align: center;
+}

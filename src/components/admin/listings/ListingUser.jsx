@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./listingUser.css";
 import Box from "../common/Box";
 import SectionTitle from "../common/SectionTitle";
 import FormPair from "../common/FormPair";
 import Select from "../../ui/Select";
 import Lable from "../common/Lable";
-const ListingUser = ({ onUserChange }) => {
-  const listingUser = [
-    { title: "Hamza" },
-    { title: "Ali" },
-    { title: "Hamza" },
-    { title: "Hamza" },
-    { title: "Hamza" },
-  ];
+import useProvideState from "../../../hooks/useProvideState";
+import useNetwork from "../../../hooks/useNetwork";
+const ListingUser = ({ onUserChange, user }) => {
+  const [listingUser, setListingUser] = useState([]);
+  const { useSelector, dispatch } = useProvideState();
+  const { apiData, httpAction } = useNetwork();
+  const { getUserName } = apiData();
+
+  useEffect(() => {
+    const getListingUser = async () => {
+      const result = await dispatch(httpAction(getUserName()));
+      console.log(result);
+      if (result?.status) {
+        setListingUser(
+          result?.list?.map((item) => {
+            return { title: item?.data?.user_name };
+          })
+        );
+      }
+    };
+    getListingUser();
+  }, []);
 
   return (
     <Box bg="white" padding="1rem" radius="10px">
@@ -21,7 +35,12 @@ const ListingUser = ({ onUserChange }) => {
         <div className="listing_user_container">
           <FormPair>
             <Lable>User</Lable>
-            <Select onChange={onUserChange} options={listingUser} />
+            <Select
+              name="user"
+              value={user}
+              onChange={onUserChange}
+              options={listingUser}
+            />
           </FormPair>
         </div>
       </div>

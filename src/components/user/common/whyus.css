@@ -60,3 +60,24 @@
   transition: all 0.4s;
   border-color: var(--clrprimary);
 }
+
+@media (max-width: 756px) {
+  .why_us_items {
+    width: 100%;
+    flex-direction: column;
+  }
+  .why_us_container {
+    width: 80%;
+    padding: 1.4rem 1rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .why_us_title {
+    padding: 0;
+  }
+  .why_us_icon {
+    font-size: 5rem;
+  }
+}

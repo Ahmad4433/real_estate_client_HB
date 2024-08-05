@@ -1,0 +1,64 @@
+.add_branch_container {
+  display: grid;
+  grid-template-columns: 2.4fr 0.6fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.add_branch_media {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.add_branch_media:hover * {
+  color: var(--clrprimary);
+}
+
+.add_branch_input_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.add_branch_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add_branch_feature {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_branch_media_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_branch_upload {
+  color: #ccc;
+  font-size: 2rem;
+}
+
+.add_branch_upload_tag {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.add_branch_image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

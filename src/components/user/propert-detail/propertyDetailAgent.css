@@ -24,6 +24,7 @@
   font-weight: 700;
   color: var(--clrprimary);
   padding-left: 0.2rem;
+  text-transform: capitalize;
 }
 
 .property_detail_agent_deal_count {
@@ -74,4 +75,43 @@
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   color: var(--clrsecondary);
+}
+
+@media (max-width: 756px) {
+  .property_detail_image_container {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .property_detail_image_container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .property_detail_agent_container {
+    margin-top: 0.6rem;
+    padding: 0;
+  }
+
+  .property_detail_agent_contact_title_title {
+    padding: 0;
+    padding-top: 0.6rem;
+  }
+
+  .property_detail_agent_contact {
+    padding: 0;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .property_detail_agent_contact a {
+    padding: 0.8rem 1rem;
+  }
+  .property_detail_agent_contact_icon,
+  .property_detail_agent_contact_title {
+    font-size: 1.2rem;
+  }
 }

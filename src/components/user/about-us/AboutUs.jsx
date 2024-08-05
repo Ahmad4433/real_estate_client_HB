@@ -47,7 +47,7 @@ const AboutUs = () => {
           <div>
             <iframe
               width="100%"
-              height="400"
+              height={window.outerWidth > 420 ? "400" : "200"}
               src="https://www.youtube.com/embed/SJhRJvGK_ZM"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -64,11 +64,11 @@ const AboutUs = () => {
       <div className="about_us_content_3">
         <Agents show={4} />
       </div>
-    <div className="about_us_content_4" >
-      <ReviewSlider show={2} />
-    </div>
+      <div className="about_us_content_4 top_margin">
+        <ReviewSlider show={2} />
+      </div>
 
-      <div className="about_us_content_4">
+      {/* <div className="about_us_content_4">
         <p className="page_title_center">Our Partners </p>
         <p className="page_detail_center">
           We only work with the best companies around the globe
@@ -83,7 +83,7 @@ const AboutUs = () => {
           <OurPartners />
         </div>
        
-      </div>
+      </div> */}
     </div>
   );
 };

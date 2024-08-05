@@ -1,0 +1,6 @@
+.admin_team_container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}

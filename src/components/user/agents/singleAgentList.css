@@ -6,10 +6,13 @@
 .single_agent_list_container {
   display: flex;
   width: 100%;
+  align-items: center;
+}
+
+.single_agent_section {
   background-color: white;
   border-radius: 10px;
   padding: 0.8rem;
-  align-items: center;
   &:hover {
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
   }
@@ -81,4 +84,54 @@
   color: var(--clrprimary);
   cursor: pointer;
   font-weight: 600;
+}
+
+.single_agent_list_links_mobile {
+  display: none;
+}
+@media (max-width: 756px) {
+  .single_agent_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 1rem;
+  }
+  .single_agent_list_image_container {
+    height: 140px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .single_agent_list_content {
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .single_agent_list_links {
+    display: none;
+  }
+
+  .single_agent_name_section p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .single_agent_list_links_mobile {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-top: 0.6rem;
+    border-top: 1px solid #f5f5f5;
+  }
+
+  .single_agent_list_social_icon{
+    font-size: 1.2rem;
+  }
+
+  .single_agent_list_contact{
+    font-size: 12px;
+  }
 }

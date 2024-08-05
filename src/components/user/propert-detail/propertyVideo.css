@@ -1,4 +1,18 @@
 .property_video_main {
-  padding: 1rem;
+  width: 100%;
   background-color: white;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+@media(max-width:756px){
+  .property_video_main{
+    margin: 1rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+  }
 }

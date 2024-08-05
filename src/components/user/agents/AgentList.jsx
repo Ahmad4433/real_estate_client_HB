@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import agent from "../../../assets/agent.jpg";
 import SingleAgentList from "./SingleAgentList";
 import team from "../../../assets/team.jpg";
 import "./agentList.css";
+import useNetwork from "../../../hooks/useNetwork";
+import useProvideState from "../../../hooks/useProvideState";
 const AgentList = () => {
+  const { dispatch } = useProvideState();
+  const { apiData, httpAction } = useNetwork();
+  const { getUserList } = apiData();
+  const [agents, setAgesnts] = useState([]);
+
+  useEffect(() => {
+    const getAgents = async () => {
+      const result = await dispatch(httpAction(getUserList()));
+      console.log(result);
+      if (result?.status) {
+        setAgesnts(result?.list);
+      }
+    };
+    getAgents();
+  }, []);
+
   return (
     <div className="agent_list_main">
       <div className="agent_list_header">
         <div className="agent_list_header_bd">
-          <p>Meet Our Team</p>
+          <p  >Meet Our Team</p>
           <p>Meet the experts who make your real estate dreams a reality</p>
         </div>
-        <img src={team} />
+        <img className='agent_header_image' src={team} />
       </div>
-      <SingleAgentList />
-      <SingleAgentList />
-      <SingleAgentList />
-      <SingleAgentList />
-      <SingleAgentList />
-      <SingleAgentList />
-      <SingleAgentList />
+      <div className="agent_list_list" >
+      {agents?.map((item,index)=><SingleAgentList agent={item} key={index} />)}
+      </div>
+
     </div>
   );
 };

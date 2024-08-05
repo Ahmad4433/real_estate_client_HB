@@ -1,56 +1,85 @@
 import React from "react";
 import "./singleProperty.css";
 import { IoLocationOutline } from "react-icons/io5";
-import property from "../../../assets/prop1.jpg";
-import { useNavigate } from "react-router-dom";
-const SingleProperty = ({ title, type }) => {
+import { useNavigate, useLocation } from "react-router-dom";
+import useScrollTop from "../../../hooks/useScrollTop";
+import amountConvert from "../../../utils/amountConver";
+
+const SingleProperty = ({ item }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const scrollTop = useScrollTop();
+  let formatedAmunt;
+  if (item) {
+    formatedAmunt = amountConvert(item?.data?.price);
+  }
 
   const detailHandler = () => {
-    navigate("/property/detail");
+    if (location.pathname.includes("/property/detail")) {
+      scrollTop();
+    }
+
+    navigate("/property/detail?id=" + item?._id);
   };
   return (
     <div onClick={detailHandler} className="single_prop_main">
-      {/* <p className="page_title_center" >{title}</p> */}
       <div className="single_prop_img_container">
-        <img src={property} className="single_prop_img" />
+        <img src={item?.galary[0]} className="single_prop_img" />
         <div className="single_prop_container_bd">
           <span
             className={
-              type === "rent"
+              item?.data?.purpose === "rent"
                 ? "single_prop_type_tag"
                 : "single_prop_type_tag_2"
             }
           >
-            {type}
+            {item?.data?.purpose}
           </span>
           <span className="single_prop_price">
-            56933/<span className="single_prop_price_duration">month</span>
+            {formatedAmunt}
+            <span style={{ fontSize: "14px", fontWeight: "500" }}>
+              ({item?.data?.price})
+            </span>
+            {item?.data?.type === "rent" && (
+              <span className="single_prop_price_duration">/month</span>
+            )}
           </span>
         </div>
       </div>
       <div className="single_prop_content">
-        <span className="single_prop_type">Apartment</span>
-        <div className="single_prop_title">Luxury family home</div>
+        <span className="single_prop_type">{item?.data?.type}</span>
+
+        <div className="single_prop_title">{item?.data?.title}</div>
         <div className="single_prop_location_container">
           <IoLocationOutline className="location_icon" />
-          <span className="single_prop_address">
-            67 bahria town sector c lahore
-          </span>
+          <span className="single_prop_address">{item?.data?.address}</span>
         </div>
         <div className="single_prop_anamties">
           <div className="single_prop_ginle_anamty">
-            <span>Beds: 4</span>
-            <span>Baths: 4</span>
-            <span>Area: 5 Marla</span>
+            {item?.data?.category !== "plot" && (
+              <>
+                <span>Beds: {item?.data?.beds}</span>
+                <span>Baths: {item?.data?.baths}</span>
+              </>
+            )}
+            <span>
+              Area: {item?.data?.area} {item?.data?.unit}
+            </span>
           </div>
         </div>
       </div>
       <div className="h_bar"></div>
       <div className="single_prop_agent">
         <div className="single_prop_agent_profile">
-          <span className="single_prop_avatar"></span>
-          <span className="single_prop_name">Hamza</span>
+          <span className="single_prop_avatar">
+            <img
+              src={item?.user?.data?.profile}
+              className="listing_agent_profile_image"
+            />
+          </span>
+          <span className="single_prop_name">
+            {item?.user?.data?.user_name}
+          </span>
         </div>
       </div>
     </div>

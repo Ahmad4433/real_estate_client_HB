@@ -44,3 +44,21 @@
   font-size: 1.2rem;
   font-style: italic;
 }
+
+@media (max-width: 756px) {
+  .home_hero_main {
+    max-height: 60vh;
+  }
+
+  .home_hero_backdrop {
+    padding: 0 1rem;
+  }
+
+  .home_hero_left {
+    gap: 2rem;
+  }
+
+  .home_hero_right {
+    display: none;
+  }
+}

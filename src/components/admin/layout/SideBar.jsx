@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoList } from "react-icons/io5";
+import { RiTeamFill } from "react-icons/ri";
 import SingleMenu from "./SingleMenu";
+import { MdGeneratingTokens } from "react-icons/md";
+import { LuGitBranchPlus } from "react-icons/lu";
+
 const SideBar = () => {
   return (
     <div className="admin_sidebar_main">
@@ -30,6 +34,9 @@ function sidebarMenus() {
       to: "/admin/lising/add",
       icon: <IoIosAddCircleOutline />,
     },
-    { title: "View Listing", to: "/admin/dashboard", icon: <IoList /> },
+    { title: "View Listing", to: "/admin/listings", icon: <IoList /> },
+    { title: "Team", to: "/admin/team", icon: <RiTeamFill /> },
+    { title: "Reviews", to: "/admin/reviews", icon: <MdGeneratingTokens /> },
+    { title: "Branches", to: "/admin/branches", icon: <LuGitBranchPlus /> },
   ];
 }

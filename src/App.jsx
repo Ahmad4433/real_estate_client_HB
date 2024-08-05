@@ -11,6 +11,10 @@ import Shop from "./components/user/shop/Shop";
 import Dashboard from "./components/admin/dashboard/Dashboard";
 import AdminLayout from "./components/admin/layout/Layout";
 import AddListing from "./components/admin/listings/AddListing";
+import Team from "./components/admin/team/Team";
+import GetAllListings from "./components/admin/listings/GetAllListings";
+import Review from "./components/admin/reviews/Review";
+import Branch from "./components/admin/branches/Branch";
 const App = () => {
   useEffect(() => {
     window.scrollTo({
@@ -32,6 +36,10 @@ const App = () => {
       <Route element={<AdminLayout />}>
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/lising/add" element={<AddListing />} />
+        <Route path="/admin/team" element={<Team />} />
+        <Route path="/admin/listings" element={<GetAllListings />} />
+        <Route path="/admin/reviews" element={<Review />} />
+        <Route path="/admin/branches" element={<Branch />} />
       </Route>
     </Routes>
   );

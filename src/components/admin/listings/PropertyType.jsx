@@ -6,16 +6,29 @@ import { Radio } from "@mui/material";
 import SectionTitle from "../common/SectionTitle";
 import Box from "../common/Box";
 import SinglePropType from "./SinglePropType";
-const PropertyType = ({ onTypeChange, onPurposeChange }) => {
-  const [propType, setPropType] = useState("house");
-  const [selectedProp, setSelectedProp] = useState("home");
+const PropertyType = ({
+  onTypeChange,
+  onPurposeChange,
+  type,
+  purpose,
+  onChangeCategory,
+  category,
+}) => {
+  const [propType, setPropType] = useState(type);
+  const [propCategory, setPropCategory] = useState(category);
+  const [propPurpose, setPropPurpose] = useState(purpose);
+
+  
 
   const handlePropType = (type) => {
-    setPropType(type);
-  };
+    onChangeCategory(type);
+    setPropCategory(type);
 
+    // setPropType(type);
+  };
   const purposeHandler = (purpose) => {
-    onPurposeChange(purpose);
+    onPurposeChange(purpose || "sale");
+    setPropPurpose(purpose);
   };
 
   return (
@@ -24,6 +37,10 @@ const PropertyType = ({ onTypeChange, onPurposeChange }) => {
         <SectionTitle title="Select Type" />
         <div className="listing_type_purpose_top">
           <div
+            style={{
+              backgroundColor: propPurpose === "rent" && "#e7f1ed",
+              borderColor: propPurpose === "rent" && "seagreen",
+            }}
             onClick={() => purposeHandler("rent")}
             className="listing_type_purpose"
           >
@@ -33,6 +50,10 @@ const PropertyType = ({ onTypeChange, onPurposeChange }) => {
           <div
             onClick={() => purposeHandler("sale")}
             className="listing_type_purpose"
+            style={{
+              backgroundColor: propPurpose === "sale" && "#e7f1ed",
+              borderColor: propPurpose === "sale" && "seagreen",
+            }}
           >
             <IoTimerOutline />
             <span>Sale</span>
@@ -42,27 +63,29 @@ const PropertyType = ({ onTypeChange, onPurposeChange }) => {
           <div
             onClick={() => handlePropType("house")}
             className={
-              propType === "house" ? "listing_type_active" : "listing_type_item"
+              propCategory === "house"
+                ? "listing_type_active"
+                : "listing_type_item"
             }
           >
             <span>House</span>
             <Radio
-              checked={propType === "house"}
+              checked={propCategory === "house"}
               size="small"
               color="success"
             />
           </div>
           <div
             className={
-              propType === "house"
+              propCategory === "house"
                 ? "listing_type_child_exp"
                 : "listing_type_child"
             }
           >
             {getHouseType().map((item, index) => (
               <SinglePropType
-                value={selectedProp}
-                setValue={setSelectedProp}
+                value={type}
+                setValue={setPropType}
                 onTypeChange={onTypeChange}
                 type={item}
                 key={index}
@@ -75,23 +98,29 @@ const PropertyType = ({ onTypeChange, onPurposeChange }) => {
           <div
             onClick={() => handlePropType("plot")}
             className={
-              propType === "plot" ? "listing_type_active" : "listing_type_item"
+              propCategory === "plot"
+                ? "listing_type_active"
+                : "listing_type_item"
             }
           >
             <span>Plot</span>
-            <Radio checked={propType === "plot"} size="small" color="success" />
+            <Radio
+              checked={propCategory === "plot"}
+              size="small"
+              color="success"
+            />
           </div>
           <div
             className={
-              propType === "plot"
+              propCategory === "plot"
                 ? "listing_type_child_exp"
                 : "listing_type_child"
             }
           >
             {getPlotType().map((item, index) => (
               <SinglePropType
-                value={selectedProp}
-                setValue={setSelectedProp}
+                value={type}
+                setValue={setPropType}
                 onTypeChange={onTypeChange}
                 key={index}
                 type={item}
@@ -102,29 +131,29 @@ const PropertyType = ({ onTypeChange, onPurposeChange }) => {
           <div
             onClick={() => handlePropType("commercial")}
             className={
-              propType === "commercial"
+              propCategory === "commercial"
                 ? "listing_type_active"
                 : "listing_type_item"
             }
           >
             <span>commercial</span>
             <Radio
-              checked={propType === "commercial"}
+              checked={propCategory === "commercial"}
               size="small"
               color="success"
             />
           </div>
           <div
             className={
-              propType === "commercial"
+              propCategory === "commercial"
                 ? "listing_type_child_exp"
                 : "listing_type_child"
             }
           >
             {getCommericlaType().map((item, index) => (
               <SinglePropType
-                value={selectedProp}
-                setValue={setSelectedProp}
+                value={type}
+                setValue={setPropType}
                 onTypeChange={onTypeChange}
                 key={index}
                 type={item}

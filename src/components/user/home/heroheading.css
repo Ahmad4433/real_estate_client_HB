@@ -1,4 +1,5 @@
-.hero_heading_main {
+.hero_heading_main,
+.hero_heading_main_mobile {
   color: white;
   font-size: 3.2rem;
   font-weight: 700;
@@ -9,5 +10,42 @@
   font-weight: 600;
   width: 80%;
 }
+.hero_heading_main_mobile {
+  display: none;
+}
+.hero_heading_container_mobile {
+  display: none;
+}
 
+@media (max-width: 430px) {
+  .hero_message {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1.4rem 0;
+  }
+  .hero_heading_main {
+    font-size: 2rem;
+    display: none;
+  }
+  .hero_heading_main_mobile {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    line-height: 1;
+  }
 
+  .hero_heading_container_mobile {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .hero_heading_container_mobile h2{
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+}

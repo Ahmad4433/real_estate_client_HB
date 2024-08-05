@@ -68,3 +68,9 @@
   color: var(--gray500);
   font-size: 14px;
 }
+
+@media (max-width: 756px) {
+  .home_agent_image_container {
+    height: 140px;
+  }
+}

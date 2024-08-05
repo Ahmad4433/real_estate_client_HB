@@ -6,7 +6,7 @@ import SectionTitle from "../common/SectionTitle";
 import FormPair from "../common/FormPair";
 import Lable from "../common/Lable";
 import Input from "../../ui/Input";
-const ListingYtVideo = ({ onUrlChange }) => {
+const ListingYtVideo = ({ onUrlChange, url }) => {
   return (
     <Box bg="white" padding="1rem" radius="10px">
       <div className="listing_yt_video_main">
@@ -15,6 +15,8 @@ const ListingYtVideo = ({ onUrlChange }) => {
           <Lable>
             <ImYoutube2 style={{ fontSize: "2rem" }} />
             <Input
+              name="videoUrl"
+              value={url}
               onChange={onUrlChange}
               placeholder="Paste Video URL"
               type="url"

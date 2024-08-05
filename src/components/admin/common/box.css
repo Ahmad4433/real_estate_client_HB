@@ -1,0 +1,4 @@
+.ui_box_hove:hover{
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.23);
+    cursor: pointer;
+}

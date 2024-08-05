@@ -23,12 +23,13 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 0.8rem;
 }
 
 .hero_filter_btn {
     width: 100%;
     padding: 0.8rem;
+    margin-top: 1rem;
     outline: none;
     border: none;
     text-transform: capitalize;
@@ -44,3 +45,11 @@
   .hero_filter_btn:active{
     background-color:var(--clrprimary);
   }
+
+
+
+  /* @media(max-width:756px){
+.hero_filter_main{
+  display: none;
+}
+  } */

@@ -1,7 +1,4 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-
-
 
 * {
   margin: 0;
@@ -19,6 +16,10 @@
   --fontmain: "Nunito";
   --agentoverlay: #080f1dcc;
   --pagepading: 4rem 0;
+  --mobile: 430px;
+  --tablet: 756px;
+  --laptop: 1440px;
+  --desktop: 1800px;
 }
 
 body {
@@ -54,4 +55,22 @@ select {
 .page_detail_center {
   color: var(--gray500);
   margin-bottom: 2rem;
+}
+
+
+
+/* Hide the spinner controls */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 430px) {
+  html {
+    font-size: 12px;
+  }
+  .page_title_center{
+    font-size: 1.6rem;
+  }
 }

@@ -22,6 +22,7 @@
 
 .listing_more_section {
   text-decoration: none;
+  cursor: pointer;
 
   color: black;
   font-size: 1.1rem;
@@ -40,5 +41,26 @@
 @media (max-width: 756px) and (min-width: 1600px) {
   .listing_section_main {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 756px) {
+  .listing_main {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .listing_section_main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .listing_page_title {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .listing_more_link{
+    font-size: 1rem;
+    font-weight: 500;
   }
 }
