@@ -23,23 +23,22 @@ const PropertyDetail = () => {
       behavior: "smooth",
     });
   }, []);
-
+  const listingId = new URLSearchParams(location.search).get("id");
   const location = useLocation();
   useEffect(() => {
-    const listingId = new URLSearchParams(location.search).get("id");
+   
     // console.log(listingId)
 
     const getSingleListing = async () => {
       const result = await dispatch(
         httpAction(getSingleListingById(listingId))
       );
-      console.log(result);
-      if (result?.status) {
+           if (result?.status) {
         setDetail(result?.list);
       }
     };
     getSingleListing();
-  }, []);
+  }, [listingId]);
 
   return (
     <div className="propty_detail_section">
