@@ -4,7 +4,10 @@ import Agents from "../common/Agents";
 import WhyUs from "../common/WhyUs";
 import OurPartners from "../common/OurPartners";
 import ReviewSlider from "../common/ReviewSlider";
+import useScrollTop from "../../../hooks/useScrollTop";
 const AboutUs = () => {
+  const scroll = useScrollTop();
+  scroll();
   return (
     <div className="about_us_main">
       <div className="about_us_bg">

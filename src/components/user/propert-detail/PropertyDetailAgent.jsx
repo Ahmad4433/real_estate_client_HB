@@ -24,7 +24,7 @@ const PropertyDetailAgent = ({ detail }) => {
           <span className="property_detail_agent_deal_count">Deals: 225</span>
           <Rating
             size="small"
-            defaultValue={parseInt(detail?.user?.data?.rating)}
+            defaultValue={Number(detail?.user?.data?.rating) || 5}
             readOnly
           />
         </div>

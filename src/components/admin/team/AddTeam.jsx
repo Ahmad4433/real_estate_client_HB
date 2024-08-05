@@ -14,7 +14,7 @@ import useNetwork from "../../../hooks/useNetwork";
 import useProvideState from "../../../hooks/useProvideState";
 import useScrollTop from "../../../hooks/useScrollTop";
 import { listingSliceAction } from "../../../store/listing-slice";
-const AddTeam = ({ onAddTeam,onUpdateTeam }) => {
+const AddTeam = ({ onAddTeam, onUpdateTeam }) => {
   const { dispatch, useSelector } = useProvideState();
   const scrollTop = useScrollTop();
   const userDoc = useSelector((state) => state.listing.updateUser);
@@ -121,7 +121,7 @@ const AddTeam = ({ onAddTeam,onUpdateTeam }) => {
     const data = {
       user_name,
       mobile,
-      whatsapp,
+      whatsapp: whatsapp.replace(/^0/, "+92"),
       facebook,
       insta,
       youtube,
@@ -138,7 +138,7 @@ const AddTeam = ({ onAddTeam,onUpdateTeam }) => {
     setLoading(true);
     if (userDoc.data) {
       result = await dispatch(httpAction(updateUser(data, userDoc?._id)));
-      result?.status && onUpdateTeam(result?.savedUser)
+      result?.status && onUpdateTeam(result?.savedUser);
     } else {
       result = await dispatch(httpAction(addNewUser(data)));
       result?.status && onAddTeam(result?.savedUser);

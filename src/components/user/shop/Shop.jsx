@@ -12,14 +12,17 @@ import getFixDropdown from "../../../utils/getFixDropdown";
 import Backdrop from "@mui/material/Backdrop";
 import { MdFilterListAlt } from "react-icons/md";
 import { modalActions } from "../../../store/model-slice";
+import useScrollTop from "../../../hooks/useScrollTop";
 import Popup from "../common/Popup";
 const Shop = () => {
+  const scroll = useScrollTop();
   const pathLocation = useLocation();
   const [loading, setLoading] = useState(false);
   const { useSelector, dispatch } = useProvideState();
   const { apiData, httpAction } = useNetwork();
   const { getFilteredListing, getAllListings, getBranchList, getAreaList } =
     apiData();
+  scroll();
   const isOpen = useSelector((state) => state.modal.isOpen);
   const filter = useSelector((state) => state.search.filter);
   const [items, setItems] = useState([]);
@@ -166,14 +169,13 @@ const Shop = () => {
       return;
     }
 
-    dispatch(modalActions.setIsOpen(false))
-    setArea('')
-    setFromPrice('')
-    setLocation('')
-    setPurp('')
-    setToPice('')
-    setType('')
-    
+    dispatch(modalActions.setIsOpen(false));
+    setArea("");
+    setFromPrice("");
+    setLocation("");
+    setPurp("");
+    setToPice("");
+    setType("");
 
     let filter;
 
@@ -210,88 +212,96 @@ const Shop = () => {
   };
 
   const modelaOpenHandler = () => {
-    dispatch(modalActions.setIsOpen(true))
+    dispatch(modalActions.setIsOpen(true));
   };
 
   return (
     <div className="shop_main">
-      <Popup component={ <div className="shop_filter_bar_mobile">
-          <div className="shop_filter_bar_sticky">
-            <p className="shop_filter_bar_heading">Select Creteria</p>
-            <div className="shop_drop_down">
-              <div className="shop_filter_pair">
-                <span className="shop_filter_lbl">Select Location</span>
-                <Select
-                  def
-                  onChange={locationChange}
-                  value={location}
-                  options={options}
-                />
+      <Popup
+        component={
+          <div className="shop_filter_bar_mobile">
+            <div className="shop_filter_bar_sticky">
+              <p className="shop_filter_bar_heading">Select Creteria</p>
+              <div className="shop_drop_down">
+                <div className="shop_filter_pair">
+                  <span className="shop_filter_lbl">Select Location</span>
+                  <Select
+                    def
+                    onChange={locationChange}
+                    value={location}
+                    options={options}
+                  />
+                </div>
+                <div className="shop_filter_pair">
+                  <span className="shop_filter_lbl">Select Type</span>
+                  <Select
+                    onChange={typeChange}
+                    value={type}
+                    options={propertyTypes}
+                  />
+                </div>
+                <div className="shop_filter_pair">
+                  <span className="shop_filter_lbl">Select Purpose</span>
+                  <Select
+                    def
+                    onChange={purpChange}
+                    value={purp}
+                    options={purpose}
+                  />
+                </div>
+                <div className="shop_filter_pair">
+                  <span className="shop_filter_lbl">Select Area</span>
+                  <Select
+                    def
+                    onChange={areaChange}
+                    value={area}
+                    options={areas}
+                  />
+                </div>
               </div>
-              <div className="shop_filter_pair">
-                <span className="shop_filter_lbl">Select Type</span>
-                <Select
-                  onChange={typeChange}
-                  value={type}
-                  options={propertyTypes}
-                />
-              </div>
-              <div className="shop_filter_pair">
-                <span className="shop_filter_lbl">Select Purpose</span>
-                <Select
-                  def
-                  onChange={purpChange}
-                  value={purp}
-                  options={purpose}
-                />
-              </div>
-              <div className="shop_filter_pair">
-                <span className="shop_filter_lbl">Select Area</span>
-                <Select
-                  def
-                  onChange={areaChange}
-                  value={area}
-                  options={areas}
-                />
-              </div>
-            </div>
-            <p className="shop_filter_bar_heading">Enter Price Range</p>
+              <p className="shop_filter_bar_heading">Enter Price Range</p>
 
-            <div className="shop_drop_down">
-              <div className="shop_filter_pair">
-                <span name="lbl_min" className="shop_filter_lbl">
-                  Min Price
-                </span>
-                <input
-                  type="number"
-                  onChange={fromPriceChange}
-                  value={fromPrice}
-                  placeholder="Min Price"
-                />
+              <div className="shop_drop_down">
+                <div className="shop_filter_pair">
+                  <span name="lbl_min" className="shop_filter_lbl">
+                    Min Price
+                  </span>
+                  <input
+                    type="number"
+                    onChange={fromPriceChange}
+                    value={fromPrice}
+                    placeholder="Min Price"
+                  />
+                </div>
+                <div className="shop_filter_pair">
+                  <span name="max_lbl" className="shop_filter_lbl">
+                    Max Price
+                  </span>
+                  <input
+                    type="number"
+                    onChange={toPriceChange}
+                    value={toPrice}
+                    placeholder="Max Price"
+                    name="max_price"
+                  />
+                </div>
+                <button
+                  disabled={!isValidForm}
+                  style={{ cursor: !isValidForm && "not-allowed" }}
+                  onClick={searchHandler}
+                  className="shop_filter_search_action"
+                >
+                  Search
+                </button>
               </div>
-              <div className="shop_filter_pair">
-                <span name="max_lbl" className="shop_filter_lbl">
-                  Max Price
-                </span>
-                <input
-                  type="number"
-                  onChange={toPriceChange}
-                  value={toPrice}
-                  placeholder="Max Price"
-                  name="max_price"
-                />
-              </div>
-              <button
-                disabled={!isValidForm}
-                style={{ cursor: !isValidForm && "not-allowed" }}
-                onClick={searchHandler}
-                className="shop_filter_search_action"
-              >
-                Search
-              </button>
             </div>
           </div>
-        </div>} close path={pathLocation.pathname} open={isOpen} title="Filter Property" />
+        }
+        close
+        path={pathLocation.pathname}
+        open={isOpen}
+        title="Filter Property"
+      />
       <div className="shop_header">
         <div className="shop_bd">
           <p> Find Your Perfect Property</p>

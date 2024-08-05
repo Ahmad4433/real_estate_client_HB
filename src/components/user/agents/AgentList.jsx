@@ -5,7 +5,10 @@ import team from "../../../assets/team.jpg";
 import "./agentList.css";
 import useNetwork from "../../../hooks/useNetwork";
 import useProvideState from "../../../hooks/useProvideState";
+import useScrollTop from "../../../hooks/useScrollTop";
 const AgentList = () => {
+  const scroll = useScrollTop()
+  scroll()
   const { dispatch } = useProvideState();
   const { apiData, httpAction } = useNetwork();
   const { getUserList } = apiData();

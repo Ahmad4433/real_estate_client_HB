@@ -7,8 +7,8 @@
 
 .property_details_features {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.6rem;
   margin-top: 1rem;
   width: 100%;
 }
@@ -39,6 +39,6 @@
   }
 
   .property_description_check{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }

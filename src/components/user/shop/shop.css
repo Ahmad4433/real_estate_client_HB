@@ -55,6 +55,9 @@
   background-color: #ffffff;
   padding: 0.6rem;
 }
+.shop_filter_bar_mobile{
+  margin: 0 auto;
+}
 
 .shop_listing_item {
   display: grid;

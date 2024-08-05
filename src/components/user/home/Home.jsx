@@ -7,13 +7,17 @@ import Branches from "../common/Branches";
 import Agents from "../common/Agents";
 import WhyUs from "../common/WhyUs";
 import ReviewSlider from "../common/ReviewSlider";
+import useScrollTop from "../../../hooks/useScrollTop";
 
 const Home = () => {
+  const scroll = useScrollTop();
   const getHouseSale = { "data.type": "home", "data.purpose": "sale" };
   const getHouseRent = { "data.type": "home", "data.purpose": "rent" };
   const getFlatSale = { "data.type": "flat", "data.purpose": "sale" };
   const getFlatRent = { "data.type": "flat", "data.purpose": "rent" };
   const getPlots = { "data.category": "plot" };
+
+  scroll();
 
   return (
     <>
