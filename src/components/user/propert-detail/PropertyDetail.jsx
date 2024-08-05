@@ -22,6 +22,10 @@ const PropertyDetail = () => {
       top: 0,
       behavior: "smooth",
     });
+
+    return ()=>location('/')
+
+
   }, []);
   const listingId = new URLSearchParams(location.search).get("id");
   const location = useLocation();
