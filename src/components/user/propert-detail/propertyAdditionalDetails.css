@@ -34,11 +34,11 @@
 @media (max-width: 756px) {
   .property_description_amenity span,
   .property_description_check {
-    font-size: 1.2rem;
+    font-size: 12px;
     font-weight: 600;
   }
 
   .property_description_check{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
