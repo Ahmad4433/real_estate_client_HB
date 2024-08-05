@@ -68,6 +68,7 @@ const Header = () => {
             {getMenuList().map((item, index) => {
               return (
                 <Link
+                  onClick={closeHandler}
                   key={index}
                   className="mobile_header_menu_item"
                   to={item.to}
