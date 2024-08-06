@@ -14,7 +14,7 @@ const Layout = () => {
       <div className="float_actions">
         <Link
           target="_blank"
-          to={`https://wa.me/?text=${encodeURIComponent(
+          to={`https://wa.me/+923104641760?text=${encodeURIComponent(
             "Hi there! I’d like to get more information about the listings on your website. Could you help me out?"
           )}`}
           style={{ textDecoration: "none" }}
