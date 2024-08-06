@@ -16,28 +16,15 @@ const PropertyDetail = () => {
   const { apiData, httpAction } = useNetwork();
   const { getSingleListingById } = apiData();
   const [detail, setDetail] = useState();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
-    return ()=>location('/')
-
-
-  }, []);
-  const listingId = new URLSearchParams(location.search).get("id");
   const location = useLocation();
-  useEffect(() => {
-   
-    // console.log(listingId)
 
+  const listingId = new URLSearchParams(location.search).get("id");
+  useEffect(() => {
     const getSingleListing = async () => {
       const result = await dispatch(
         httpAction(getSingleListingById(listingId))
       );
-           if (result?.status) {
+      if (result?.status) {
         setDetail(result?.list);
       }
     };

@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const PropertyDetailAgent = ({ detail }) => {
-  const message = `Hello dear ${detail?.user?.data?.user_name}, I am interested in this property. Please let me know more about it.\n\nHere is the link to the property: ${window.location.href}\n\nAdditional Info: Feel free to call me at any time for more details.`;
+  const message = `Hello dear ${detail?.user?.data?.user_name}, I am interested in this property. Please let me know more about it.\n\nHere is the link to the property: ${window.location.href}`;
 
   return (
     <div className="property_detail_agent_main">
