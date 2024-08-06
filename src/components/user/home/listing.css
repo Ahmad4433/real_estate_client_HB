@@ -52,7 +52,7 @@
 
   .listing_section_main {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2.4rem 0;
   }
 
   .listing_page_title {

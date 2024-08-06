@@ -21,7 +21,7 @@ const HeroHeading = () => {
         />
       </div>
       <div className="hero_heading_container_mobile" >
-        <h2>Fine Your Dream</h2>
+        <h2>Find Your Dream</h2>
         <div className="hero_heading_main_mobile">
           <TypeAnimation
             sequence={[

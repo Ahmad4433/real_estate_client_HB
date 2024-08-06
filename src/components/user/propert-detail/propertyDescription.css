@@ -40,7 +40,8 @@ background-color: #f5f5f5;
 
 .propert_description_detail {
   color: var(--gray500);
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .peopert_description_detail_action {

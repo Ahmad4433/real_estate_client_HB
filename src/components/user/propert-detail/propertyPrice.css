@@ -1,35 +1,37 @@
+.property_price_main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  gap: 1rem;
+}
+
 .propty_detail_section {
   width: 100%;
   background-color: white;
 }
-
-.property_price_main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
 .propert_price_title {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.6px;
   color: var(--clrsecondary);
 }
 
 .propert_price_address {
   color: var(--gray500);
-  font-size: 14px;
+  font-size:1.2rem;
+  font-weight: 600;
 }
 
 .propert_price_price {
   font-weight: 700;
   font-size: 2rem;
+  color: var(--clrprimary);
 }
 
 .propert_price_price span {
   font-size: 14px;
-  color: var(--gray500);
+  /* color: var(--gray500); */
+  color: var(--clrprimary);
 }
 
 @media (max-width: 756px) {
@@ -43,7 +45,7 @@
     flex-direction: column-reverse;
   }
 
-  .propert_price_price  {
+  .propert_price_price {
     font-size: 1.4rem;
     width: 100%;
   }
@@ -52,7 +54,7 @@
     width: 100%;
   }
   .propert_price_title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin: 0;
     padding: 0;
   }

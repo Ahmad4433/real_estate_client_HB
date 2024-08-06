@@ -65,7 +65,7 @@ const ReviewList = ({ savedReview }) => {
                       />
                     </td>
                     <td>{item?.data?.name}</td>
-                    <td>{item?.data?.message}</td>
+                    <td className='admin_review_message' >{item?.data?.message}</td>
                     <td>{new Date(item?.createdAt).toLocaleDateString()}</td>
                     <td>
                       <div className="review_table_actions">

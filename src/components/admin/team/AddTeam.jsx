@@ -121,7 +121,7 @@ const AddTeam = ({ onAddTeam, onUpdateTeam }) => {
     const data = {
       user_name,
       mobile,
-      whatsapp: whatsapp.replace(/^0/, "+92"),
+      whatsapp: whatsapp && whatsapp.replace(/^0/, "+92"),
       facebook,
       insta,
       youtube,
@@ -154,7 +154,8 @@ const AddTeam = ({ onAddTeam, onUpdateTeam }) => {
       setMobile("");
       setProfile("");
       setPreview("");
-      setRating("");
+      setRating(1);
+      setTiktok("");
       setUser_detail("");
       setUser_email("");
       setUser_name("");
@@ -329,7 +330,9 @@ function validateNewUser(data) {
     if (data[key] === "" || data[key] === null || data[key] === undefined) {
       toast.error(`${key} is required`);
       const element = document.getElementsByName(key)[0];
-      element.focus();
+      if (element) {
+        element.focus();
+      }
       return false;
     }
   }

@@ -137,7 +137,7 @@ const AddListing = () => {
 
     if (result?.status) {
       dispatch(listingSliceAction.setUpdateDoc({}));
-      navigate("/admin/listings");
+      // navigate("/admin/listings");
     }
   };
 

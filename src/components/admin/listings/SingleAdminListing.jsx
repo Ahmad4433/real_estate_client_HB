@@ -36,9 +36,11 @@ const SingleAdminListing = ({ listing, index, data, setData }) => {
     const result = await dispatch(
       httpAction(updateListingActions(listing?._id, true))
     );
+   
     if (result?.status) {
       toast.success(result?.message);
       setISHot(true);
+      
     }
   };
 
@@ -91,7 +93,7 @@ const SingleAdminListing = ({ listing, index, data, setData }) => {
       <td>
         <div className="table_admin_listig_action_container">
           <FaGripfire
-            style={{ color: ishot || listing?.isHot && "#ff5a5f" }}
+            style={{  color:listing?.isHot || ishot   && "#ff5a5f" }}
             onClick={hotActiveHandler}
             className="tabele_admin_listing_icon_hot"
           />
