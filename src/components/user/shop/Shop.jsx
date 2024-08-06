@@ -14,6 +14,7 @@ import { MdFilterListAlt } from "react-icons/md";
 import { modalActions } from "../../../store/model-slice";
 import useScrollTop from "../../../hooks/useScrollTop";
 import Popup from "../common/Popup";
+import toast from 'react-hot-toast'
 const Shop = () => {
   const scroll = useScrollTop();
   const pathLocation = useLocation();
@@ -152,6 +153,7 @@ const Shop = () => {
     const formatedMaxPrice = parseInt(toPrice);
     if (formatedMaxPrice < formatedMinPrice) {
       validatePrice("error");
+      toast.error('invalid max price')
       return;
     }
 
@@ -159,6 +161,7 @@ const Shop = () => {
       const minLbl = document.getElementsByName("lbl_min")[0];
       minLbl.style.color = "red";
       minLbl.textContent = "min price is required";
+      toast.error('min price required')
       return;
     }
 
@@ -166,6 +169,7 @@ const Shop = () => {
       const maxEle = document.getElementsByName("max_lbl")[0];
       maxEle.style.color = "red";
       maxEle.textContent = "max price is required";
+      toast.error('max price required')
       return;
     }
 
