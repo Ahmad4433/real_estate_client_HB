@@ -7,6 +7,9 @@ const PropertyDescription = ({ detail }) => {
     setDesExp(!desExp);
   };
 
+
+  console.log(detail?.data?.detail)
+
   return (
     <div className="property_description_main">
       <div className="propert_description_main_features">

@@ -138,7 +138,7 @@ const AddListing = () => {
 
     if (result?.status) {
       dispatch(listingSliceAction.setUpdateDoc({}));
-      // navigate("/admin/listings");
+      navigate("/admin/listings");
     }
   };
 
@@ -215,8 +215,10 @@ function validateListing(data) {
   for (const key in data) {
     if (data[key] === "" || data[key] === null || data[key] === undefined) {
       toast.error(`${key} is required`);
+     if(key !=='detail'){
       const elenet = document.getElementsByName(key)[0];
       elenet.focus();
+     }
 
       return false;
     }

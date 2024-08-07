@@ -7,7 +7,7 @@
 
 .property_details_features {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 0.6rem;
   margin-top: 1rem;
   width: 100%;
@@ -29,6 +29,7 @@
 }
 .property_description_amenity span:first-child {
   text-transform: capitalize;
+  font-size: 14px;
 }
 
 @media (max-width: 756px) {
@@ -40,5 +41,9 @@
 
   .property_description_check{
     font-size: 1.2rem;
+  }
+
+  .property_details_features{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }

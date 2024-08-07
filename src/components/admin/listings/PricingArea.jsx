@@ -7,6 +7,7 @@ import SectionTitle from "../common/SectionTitle";
 import Select from "../../ui/Select";
 import FormPair from "../common/FormPair";
 import MultiPair from "../common/MultiPair";
+import convertPrice from "../../../utils/amountConver";
 const PricingArea = ({
   onPriceChange,
   onAreaChange,
@@ -41,6 +42,9 @@ const PricingArea = ({
                   placeholder="Enter Price"
                 />
               </FormPair>
+              <span style={{ color: "seagreen", fontWeight: "500" }}>
+                {convertPrice(price)}
+              </span>
             </div>
             <div className="pricing_area_area">
               <div className="pricing_area_item">
