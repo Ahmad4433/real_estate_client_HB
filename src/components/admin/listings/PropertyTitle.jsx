@@ -5,11 +5,15 @@ import TextArea from "../../ui/TextArea";
 import Box from "../common/Box";
 import SectionTitle from "../common/SectionTitle";
 import Lable from "../common/Lable";
+import TextEditor from "../common/TextEditor";
 
-const PropertyTitle = ({ onTitleChange, onDetailChange, title, detail }) => {
-
-
-
+const PropertyTitle = ({
+  onTitleChange,
+  onDetailChange,
+  title,
+  detail,
+  setDetail,
+}) => {
   return (
     <>
       <Box bg="white" padding="1.6rem" radius="10px">
@@ -17,17 +21,16 @@ const PropertyTitle = ({ onTitleChange, onDetailChange, title, detail }) => {
         <div className="admin_add_listing_pair">
           <Lable>Title</Lable>
           <Input
-            name='title'
+            name="title"
             value={title}
             onChange={onTitleChange}
             type="text"
             placeholder="Property Title"
-          
           />
         </div>
         <div className="admin_add_listing_pair">
           <Lable>Detail</Lable>
-          <TextArea
+          {/* <TextArea
             name='detail'
             value={detail}
             onChange={onDetailChange}
@@ -35,7 +38,8 @@ const PropertyTitle = ({ onTitleChange, onDetailChange, title, detail }) => {
             placeholder="Property Detail"
             row={10}
      
-          />
+          /> */}
+          <TextEditor data={detail} setData={setDetail} />
         </div>
       </Box>
     </>

@@ -148,4 +148,13 @@
   .single_prop_img_container{
     height: 160px;
   }
+
+  .single_prop_ginle_anamty span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: seagreen;
+  }
+  .single_prop_type{
+    font-size: 1.4rem;
+  }
 }

@@ -23,7 +23,10 @@ const PropertyDescription = ({ detail }) => {
       </div>
       <div className="property_deacription_decription">
         <span className="propert_description_title">Description</span>
-        <p className={"propert_description_detail"}>{detail?.data?.detail}</p>
+        <p
+          className={"propert_description_detail"}
+          dangerouslySetInnerHTML={{ __html: detail?.data?.detail }}
+        ></p>
       </div>
     </div>
   );

@@ -53,9 +53,7 @@ const AddListing = () => {
     editListing && editListing.data ? editListing?.data?.videoUrl : ""
   );
   const { onChangeHandler: userChange, value: user } = useOnchange(
-    editListing && editListing.data
-      ? editListing?.user?.data?.user_name
-      : ""
+    editListing && editListing.data ? editListing?.user?.data?.user_name : ""
   );
   const { onChangeHandler: priceChange, value: price } = useOnchange(
     editListing && editListing.data ? editListing?.data?.price : null
@@ -69,9 +67,12 @@ const AddListing = () => {
   const { onChangeHandler: titleChange, value: title } = useOnchange(
     editListing && editListing.data ? editListing?.data?.title : null
   );
-  const { onChangeHandler: detailChange, value: detail } = useOnchange(
-    editListing && editListing.data && editListing?.data?.detail
-  );
+  // const { onChangeHandler: detailChange, value: detail } = useOnchange(
+  //   editListing && editListing.data && editListing?.data?.detail
+  // );
+
+  const [detail, setDetail] = useState("");
+
   const { onChangeHandler: featureChange, value: feature } = useOnchange(
     editListing && editListing.data && editListing?.data?.features
   );
@@ -178,7 +179,8 @@ const AddListing = () => {
                 title={title}
                 detail={detail}
                 onTitleChange={titleChange}
-                onDetailChange={detailChange}
+                // onDetailChange={detailChange}
+                setDetail={setDetail}
               />
               <PricingArea
                 beds={beds}
