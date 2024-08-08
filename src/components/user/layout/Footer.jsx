@@ -45,25 +45,37 @@ const Footer = () => {
         <div className="footrer_col">
           <p className="footer_link_title">Follow Us</p>
           <div className="footer_follow_links"></div>
-          <Link className="footer_link">
+          <Link
+            to="https://www.facebook.com/profile.php?id=100076323705822"
+            target="_blanck"
+            className="footer_link"
+          >
             <FaFacebook />
             <span>Facebook</span>
           </Link>
-          <Link className="footer_link">
+          <Link to='https://www.instagram.com/hafizbrothersestate/' target="_blanck" className="footer_link">
             <FaInstagram />
             <span>Instagram</span>
           </Link>
-          <Link className="footer_link">
+          {/* <Link className="footer_link">
             {" "}
             <FaTwitter />
             <span>Twitter</span>
-          </Link>
-          <Link className="footer_link">
+          </Link> */}
+          <Link
+            to="https://www.youtube.com/@hafizbrothersestate"
+            target="_blanck"
+            className="footer_link"
+          >
             {" "}
             <FaYoutube />
             <span>Youtube</span>
           </Link>
-          <Link className="footer_link">
+          <Link
+            to="https://www.tiktok.com/@hafizbrothersestate"
+            target="_blanck"
+            className="footer_link"
+          >
             <FaTiktok />
             <span>Tiktok</span>
           </Link>
