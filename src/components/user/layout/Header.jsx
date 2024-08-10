@@ -8,6 +8,9 @@ import Popup from "../common/Popup";
 import HeroFilter from "../home/HeroFilter";
 import useProvideState from "../../../hooks/useProvideState";
 import { modalActions } from "../../../store/model-slice";
+import logoHeader from "../../../assets/logo_horizontal 150x250 red.png";
+import logoHeaderOutline from "../../../assets/logo_horizontal white 250x150.png";
+import logoSvg from "../../../assets/logo_horizontal svg.svg";
 
 const Header = () => {
   const [isScroll, setIsScrol] = useState(null);
@@ -60,7 +63,11 @@ const Header = () => {
       </div>
       <Offcanvas show={open} onHide={closeHandler}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>LOGO</Offcanvas.Title>
+          <Offcanvas.Title>
+            <div className="logo_header_mobile" >
+              <img src={logoSvg} />
+            </div>
+          </Offcanvas.Title>
         </Offcanvas.Header>
 
         <Offcanvas.Body>
@@ -88,7 +95,15 @@ const Header = () => {
             : "user_header_items"
         }
       >
-        <div className="user_header_logo">LOGO</div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <div className="user_header_logo">
+            {isScroll ? (
+              <img src={logoHeaderOutline} />
+            ) : (
+              <img src={logoHeader} />
+            )}
+          </div>
+        </Link>
 
         <div className="user_header_menus">
           {getMenuList().map((item, index) => {

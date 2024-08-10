@@ -1,5 +1,5 @@
 const apis = () => {
-  const local = "https://real-estate-hb-7z1i.vercel.app/";
+  const local = "https://portal.hafizbrothersestate.com/";
 
   return {
     uploadImages: `${local}galary/add`,
