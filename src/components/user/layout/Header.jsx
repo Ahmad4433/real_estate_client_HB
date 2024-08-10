@@ -51,7 +51,9 @@ const Header = () => {
         title="Filter Property"
       />
       <div className="mobile_header_container">
-        <h3>LOGO</h3>
+      <div className="logo_header_mobile" >
+              <img src={logoSvg} />
+            </div>
         <div
           onClick={() => dispatch(modalActions.setIsOpen(true))}
           className="mobile_header_filter_opner"
