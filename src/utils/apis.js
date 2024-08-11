@@ -1,5 +1,6 @@
 const apis = () => {
   const local = "https://portal.hafizbrothersestate.com/";
+  const live = 'http://localhost:8000/'
 
   return {
     uploadImages: `${local}galary/add`,

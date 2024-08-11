@@ -13,6 +13,7 @@ const ListingImages = ({
   setSelectedFiles,
   setFilePath,
   filePath,
+  setIsFileDel
 }) => {
   const imageRef = useRef();
   const [preview, setPreview] = useState(filePath ? filePath : []);
@@ -46,10 +47,12 @@ const ListingImages = ({
   const handleOpenImage = () => {
     if (imageRef.current) {
       imageRef.current.click();
+      setIsFileDel(false)
     }
   };
 
   const handleImageDelete = (index) => {
+    setIsFileDel(true)
     const updatesImages = [...selectedFiles];
     const updatedPreview = [...preview];
     updatedPreview.splice(index, 1);

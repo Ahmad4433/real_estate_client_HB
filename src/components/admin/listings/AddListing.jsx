@@ -35,6 +35,7 @@ const AddListing = () => {
 
   // state to store user selected images
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [isFileDel, setIsFileDel] = useState(false);
   const [filePath, setFilePath] = useState(
     editListing && editListing.galary?.length > 0 ? editListing?.galary : []
   );
@@ -90,15 +91,18 @@ const AddListing = () => {
   );
 
   async function uploadGalary() {
+    // console.log(selectedFiles, "from galary");
     const result = await dispatch(httpAction(uploadImages(selectedFiles)));
+    // console.log(result,'from listing image')
+    console.log(result)
     if (result?.status) {
       setSelectedFiles([]);
-      setFilePath((prevPath) => [...prevPath, ...result?.savedGalary.image]);
+      setFilePath((prevPath) => [...prevPath,...result?.savedGalary.image]);
     }
   }
 
   useEffect(() => {
-    if (selectedFiles?.length > 0) {
+    if (selectedFiles?.length > 0 && !isFileDel) {
       uploadGalary();
     }
   }, [selectedFiles]);
@@ -107,6 +111,7 @@ const AddListing = () => {
     event.preventDefault();
     const data = {
       branch,
+
       address,
       type,
       purpose,
@@ -166,6 +171,7 @@ const AddListing = () => {
                 purpose={purpose}
               />
               <ListingImages
+                setIsFileDel={setIsFileDel}
                 setFilePath={setFilePath}
                 filePath={filePath}
                 selectedFiles={selectedFiles}
@@ -213,14 +219,16 @@ export default AddListing;
 
 function validateListing(data) {
   for (const key in data) {
-    if (data[key] === "" || data[key] === null || data[key] === undefined) {
-      toast.error(`${key} is required`);
-     if(key !=='detail'){
-      const elenet = document.getElementsByName(key)[0];
-      elenet.focus();
-     }
+    if (data[key] === "" && key !== "videoUrl") {
+      if (data[key] === "" || data[key] === null || data[key] === undefined) {
+        toast.error(`${key} is required`);
+        if (key !== "detail" && key !== "videoUrl") {
+          const elenet = document.getElementsByName(key)[0];
+          elenet.focus();
+        }
 
-      return false;
+        return false;
+      }
     }
   }
   return true;

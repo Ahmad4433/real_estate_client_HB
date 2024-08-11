@@ -47,7 +47,7 @@ const PropertyDetail = () => {
           <div className="property_detail_left">
             <PropertyDescription detail={detail} />
             <PropertAdditionalDetails detail={detail} />
-            <PropertyVideo detail={detail} />
+          {detail?.data?.videoUrl &&   <PropertyVideo detail={detail} /> }
           </div>
           <div className="property_detail_agent_detail">
             <PropertyDetailAgent detail={detail} />
